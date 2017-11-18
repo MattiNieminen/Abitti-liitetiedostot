@@ -2,6 +2,9 @@
 
 Utility for adding attachments to Abitti-exams
 
+App is running
+[here][https://mattinieminen.github.io/abitti-liitetiedostot/].
+
 ## Development 
 
 To get an interactive development environment run:
