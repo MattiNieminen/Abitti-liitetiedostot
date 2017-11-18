@@ -1,5 +1,6 @@
 (ns abitti-liitetiedostot.core
-    (:require [reagent.core :as r]))
+  (:require [reagent.core :as r]
+            [abitti-liitetiedostot.zip :as zip]))
 
 (defonce state (r/atom {}))
 
@@ -13,7 +14,7 @@
      [:h2.attachments__header "Valitut liitteet"]
      [:ul.attachments-list
       (for [[idx itm] (map-indexed vector attachments)]
-        [:li.attachments-list__item {:key idx} (:filename itm)])]]))
+        [:li.attachments-list__item {:key idx} (.-name itm)])]]))
 
 (defn content-view []
   (let [{:keys [exam attachments]} @state]
@@ -26,8 +27,7 @@
       {:type "file"
        :on-change (fn [e]
                     (let [f (aget (-> e .-target .-files) 0)]
-                      (swap! state assoc :exam {:file f
-                                                :filename (.-name f)})))}]
+                      (swap! state assoc :exam f)))}]
      [:p.content__text
       "Klikkaa alla olevaa nappia, ja valitse kaikki liitetiedostot jotka haluat liittää kokeeseen. Voit valita useamman tiedoston pitämällä näppämistön CMD-nappia tai CTRL-nappia pohjassa"]
      [:input.content__file
@@ -38,21 +38,20 @@
                       (swap! state
                              assoc
                              :attachments
-                             (for [idx (range (.-length files))
-                                   :let [f (aget files idx)]]
-                               {:file f
-                                :filename (.-name f)}))))}]
+                             (for [idx (range (.-length files))]
+                               (aget files idx)))))}]
      [attachments-view {:attachments attachments}]
      [:p.content__text
       "Klikkaa alla olevaa nappia ladataksesi uuden zip-tiedoston koneellesi, jonka voit tuoda takaisin Abittiin klikkaamalla \"Tuo koe (.zip)\" -nappia. Valitset vain tuolloin Abitista tiedoston jonka saat klikkaamalla alla olevaa nappia."]
-     (if (empty? exam)
+     (if-not exam
        [:p.content__text.content__text--warning
         "Et ole vielä valinnut Abitista tuotua zip-tiedostoa"])
      (if (empty? attachments)
        [:p.content__text.content__text--warning
         "Et ole vielä valinnut liitteitä"])
      [:button.content__button
-      {:disabled (and (empty? exam) (empty? attachments))}
+      {:disabled (or (nil? exam) (empty? attachments))
+       :on-click #(zip/abitti-with-attachments exam attachments!))}
       "Lataa valmis koe zip-tiedostona Abittiin viemistä varten"]]))
 
 (defn main-view []
