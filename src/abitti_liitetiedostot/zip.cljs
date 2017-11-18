@@ -29,5 +29,3 @@
                                      "location"
                                      (str "data:application/zip;base64,"
                                           base64)))))))))))
-
-
