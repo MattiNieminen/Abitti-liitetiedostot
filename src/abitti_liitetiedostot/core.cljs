@@ -51,7 +51,7 @@
         "Et ole vielä valinnut liitteitä"])
      [:button.content__button
       {:disabled (or (nil? exam) (empty? attachments))
-       :on-click #(zip/abitti-with-attachments exam attachments!))}
+       :on-click #(zip/abitti-with-attachments exam attachments)}
       "Lataa valmis koe zip-tiedostona Abittiin viemistä varten"]]))
 
 (defn main-view []

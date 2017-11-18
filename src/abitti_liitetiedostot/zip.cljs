@@ -28,4 +28,4 @@
                                (aset js/window
                                      "location"
                                      (str "data:application/zip;base64,"
-                                          base64)))))))))))
+                                          base64))))))))))
