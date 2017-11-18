@@ -1,12 +1,8 @@
 # abitti-liitetiedostot
 
-FIXME: Write a one-line description of your library/project.
+Utility for adding attachments to Abitti-exams
 
-## Overview
-
-FIXME: Write a paragraph about the library/project and highlight its goals.
-
-## Setup
+## Development 
 
 To get an interactive development environment run:
 
@@ -32,8 +28,12 @@ To create a production build run:
 And open your browser in `resources/public/index.html`. You will not
 get live reloading, nor a REPL. 
 
+## Deploying to gh-pages
+
+TODO write script or instructions
+
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2017 Matti Nieminen
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
