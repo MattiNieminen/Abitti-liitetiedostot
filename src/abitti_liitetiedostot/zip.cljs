@@ -11,7 +11,8 @@
   (.file z filename file))
 
 (defn ->base64 [z]
-  (.generateAsync z (clj->js {:type "base64"})))
+  (.generateAsync z (clj->js {:type "base64"
+                              :compression "DEFLATE"})))
 
 ;; TODO clean promises
 (defn abitti-with-attachments [exam attachments]
