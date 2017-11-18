@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
 html, body {
     display: flex;
     flex-flow: column nowrap;
     height: 100%;
-    padding: 0;
-    margin: 0;
 }
 
 #app {
@@ -36,3 +42,71 @@ html, body {
 }
 
 /* App itself */
+
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    background-color: #3498db;
+    color: #fff;
+}
+
+.content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    flex: 1 0 auto;
+    align-self: center;
+    max-width: 600px;
+    padding: 0 10px;
+}
+
+.content__text {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.content__text--warning {
+    margin-bottom: 0;
+    color: #b33a3a;
+    font-size: 14px;
+}
+
+.content__file {
+    margin-bottom: 20px;
+}
+
+.content__button {
+    margin: 20px 0;
+    padding: 20px 30px;
+}
+
+.attachments {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 20px;
+    padding: 10px 50px 15px 20px;
+    border: 1px solid #3498db;
+}
+
+.attachments__header {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #3498db;
+}
+
+.attachments-list {
+    list-style-type: none;
+}
+
+.attachments-list__item {
+    font-weight: 600;
+}
