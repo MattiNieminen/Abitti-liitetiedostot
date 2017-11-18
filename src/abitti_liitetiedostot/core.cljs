@@ -6,7 +6,7 @@
 
 (defn header-view []
   [:div.header
-   [:h1.header__title "Matin ultimaattinen Abitti-apuohjelma"]])
+   [:h1.header__title "Eevan ultimaattinen Abitti-apuohjelma <3"]])
 
 (defn attachments-view [{:keys [attachments]}]
   (if-not (empty? attachments)
