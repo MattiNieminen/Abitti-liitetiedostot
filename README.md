@@ -33,7 +33,11 @@ get live reloading, nor a REPL.
 
 ## Deploying to gh-pages
 
-TODO write script or instructions
+Run script
+
+    ./deploy.sh
+
+Then commit and push :::--DDDD
 
 ## License
 
