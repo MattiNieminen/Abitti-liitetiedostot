@@ -3,7 +3,7 @@
 Utility for adding attachments to Abitti-exams
 
 App is running
-[here][https://mattinieminen.github.io/abitti-liitetiedostot/].
+[here](https://mattinieminen.github.io/abitti-liitetiedostot/).
 
 ## Development 
 
