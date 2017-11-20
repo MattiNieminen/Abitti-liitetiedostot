@@ -37,7 +37,7 @@ Run script
 
     ./deploy.sh
 
-Then commit and push :::--DDDD
+Then commit and push to master.
 
 ## License
 
